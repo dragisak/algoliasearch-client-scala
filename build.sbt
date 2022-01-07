@@ -24,7 +24,9 @@ developers += Developer(
   url("https://github.com/algolia/algoliasearch-client-scala/")
 )
 publishTo := sonatypePublishToBundle.value
-pgpSigningKey := Credentials.forHost(credentials.value, "pgp").map(_.userName) // related to https://github.com/sbt/sbt-pgp/issues/170
+pgpSigningKey := Credentials
+  .forHost(credentials.value, "pgp")
+  .map(_.userName) // related to https://github.com/sbt/sbt-pgp/issues/170
 
 lazy val root = project
   .in(file("."))
@@ -42,9 +44,9 @@ lazy val root = project
 // Project dependencies
 libraryDependencies += "org.asynchttpclient" % "async-http-client" % "2.12.3"
 libraryDependencies += "io.netty" % "netty-resolver-dns" % "4.1.45.Final"
-libraryDependencies += "org.json4s" %% "json4s-ast" % "3.6.7"
-libraryDependencies += "org.json4s" %% "json4s-core" % "3.6.7"
-libraryDependencies += "org.json4s" %% "json4s-native" % "3.6.7"
+libraryDependencies += "org.json4s" %% "json4s-ast" % "4.1.0-M1"
+libraryDependencies += "org.json4s" %% "json4s-core" % "4.1.0-M1"
+libraryDependencies += "org.json4s" %% "json4s-native" % "4.1.0-M1"
 libraryDependencies += "org.scala-lang.modules" %% "scala-collection-compat" % "2.1.4"
 libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.30"
 
